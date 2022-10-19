@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<div class="container" style="margin-top: 30px;">
+    <h4>Form prediksi</h4>
+    <small>Silahkan input data pengujian</small>
+    <hr/>
+    <div class="row">
+        <div class="col-4 col-lg-4">
+            <div class="form-group">
+                <label>Masukkan level sungai saat ini</label>
+                <input type="number" class="form-control" id="txtLevelSungai" name="txtLevelSungai" required>
+            </div>
+            <div class="form-group">
+                <label>Masukkan curah hujan</label>
+                <input type="number" class="form-control" id="txtCurahHujan" name="txtCurahHujan" required>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="javascript:void(0)" class="btn btn-primary" onclick="prosesPrediksi()">Proses prediksi banjir</a>
+        </div>
+    </div>
+</div>
+<script>
+
+    document.querySelector("#txtLevelSungai").focus();
+
+    function prosesPrediksi()
+    {
+        let levelSungai = document.querySelector("#txtLevelSungai").value;
+        let curahHujan = document.querySelector("#txtCurahHujan").value;
+        let ds = {'level':levelSungai, 'curah':curahHujan}
+        console.log(ds);
+    }
+</script>
+{% endblock contents %}

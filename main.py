@@ -10,5 +10,14 @@ def index():
     dr = {'BASE_URL': BASE_URL}
     return render_template('home.html', dRes=dr)
 
+@app.route('/prediksi')
+def prediksi():
+    dr = {'BASE_URL':BASE_URL}
+    return render_template('prediksi.html', dRes=dr)
+
+@app.route('/prediksi/proses')
+def prosesPrediksi():
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7001)

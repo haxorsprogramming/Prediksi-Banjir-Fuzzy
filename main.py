@@ -15,9 +15,10 @@ def prediksi():
     dr = {'BASE_URL':BASE_URL}
     return render_template('prediksi.html', dRes=dr)
 
-@app.route('/prediksi/proses')
+@app.route('/proses-prediksi', methods=('GET', 'POST'))
 def prosesPrediksi():
-
+    dr = {'status' : 'sukses'}
+    return jsonify(dr)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7001)

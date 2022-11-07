@@ -30,7 +30,9 @@
         let levelSungai = document.querySelector("#txtLevelSungai").value;
         let curahHujan = document.querySelector("#txtCurahHujan").value;
         let ds = {'level':levelSungai, 'curah':curahHujan}
-        console.log(ds);
+        $.post("{{ BASE_URL }}/proses-prediksi", ds, function(data){
+            console.log(data);
+        });
     }
 </script>
 {% endblock contents %}

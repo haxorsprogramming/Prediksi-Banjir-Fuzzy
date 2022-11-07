@@ -52,7 +52,17 @@ def prosesPrediksi():
     ax.plot(x_riverlevel, riverlevel_amaran,linewidth=1.5, label='Peringatan')
     ax.plot(x_riverlevel, riverlevel_bahaya,linewidth=1.5, label='bahaya')
     ax.legend()
-    plt.savefig('img_save/level_'+str(kdPengujian)+'.png')
+    plt.savefig('img_save/level_sungai_'+str(kdPengujian)+'.png')
+    plt.close()
+
+    fig, ax = plt.subplots(figsize=(18,5))
+    ax.set_title('Level curah hujan')
+    ax.set_xlabel('Amount of rainfall')
+    ax.plot(x_rainfall, rainfall_low, linewidth=1.5, label='low')
+    ax.plot(x_rainfall, rainfall_moderate, linewidth=1.5, label='moderate')
+    ax.plot(x_rainfall, rainfall_high, linewidth=1.5, label='heavy')
+    ax.legend()
+    plt.savefig('img_save/level_hujan_'+str(kdPengujian)+'.png')
     plt.close()
 
     

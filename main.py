@@ -65,7 +65,17 @@ def prosesPrediksi():
     plt.savefig('img_save/level_hujan_'+str(kdPengujian)+'.png')
     plt.close()
 
-    
+    river_level_norm = fuzz.interp_membership(x_riverlevel, riverlevel_normal, CURRENT_RIVER_LEVEL)
+    river_level_berjaga = fuzz.interp_membership(x_riverlevel, riverlevel_berjaga, CURRENT_RIVER_LEVEL)
+    river_level_amaran = fuzz.interp_membership(x_riverlevel, riverlevel_amaran, CURRENT_RIVER_LEVEL)
+    river_level_bahaya = fuzz.interp_membership(x_riverlevel, riverlevel_bahaya, CURRENT_RIVER_LEVEL)
+
+    rainfall_low = fuzz.interp_membership(x_rainfall, rainfall_low, CURRENT_RAINFALL)
+    rainfall_moderate = fuzz.interp_membership(x_rainfall, rainfall_moderate, CURRENT_RAINFALL)
+    rainfall_high = fuzz.interp_membership(x_rainfall, rainfall_high, CURRENT_RAINFALL)
+
+    results = dict()
+
 
     dr = {
         'status' : 'sukses',
